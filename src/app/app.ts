@@ -2,10 +2,11 @@ import { Component, HostListener, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SideBar } from './side-bar/side-bar';
 import { Main } from './main/main';
+import { HeaderBar } from './header-bar/header-bar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SideBar, Main],
+  imports: [RouterOutlet, SideBar, Main,HeaderBar],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

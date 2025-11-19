@@ -13,11 +13,21 @@ export class SideBar {
   isSideBarCollapse = input.required<boolean>();
   changeIsSideBarCollapse = output<boolean>();
   items = [
-    {
-      routeLink: 'dashboard',
+    
+     {
+      routeLink: 'tamil',
       icon: 'bi bi-motherboard',
-      label: 'Dashboard',
+      label: 'Tamil',
     },
+     {
+      routeLink: 'telugu',
+      icon: 'bi bi-motherboard',
+      label: 'Telugu',
+    },  {
+      routeLink: 'malayalam',
+      icon: 'bi bi-motherboard',
+      label: 'Malayalam',
+    }
   ];
 
   toggleCollapse(): void {
