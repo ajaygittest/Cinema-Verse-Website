@@ -1,7 +1,6 @@
 <cine-header-bar></cine-header-bar>
-<cine-side-bar [isSideBarCollapse]="isSideBarCollapse()"
-(changeIsSideBarCollapse)="changeIsSideBarCollapse($event)"/>
+<cine-side-bar [isSideBarCollapse]="isSideBarCollapse()" (changeIsSideBarCollapse)="changeIsSideBarCollapse($event)" />
 @if(isPanelOpen){
 <cine-user-panel></cine-user-panel>
 }
-<cine-main [isSideBarCollapse]="isSideBarCollapse()" [screenWdith]="screenWdith()"/>
+<cine-main [isSideBarCollapse]="isSideBarCollapse()" [screenWdith]="screenWdith()" />

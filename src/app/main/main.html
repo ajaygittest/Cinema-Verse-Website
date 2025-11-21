@@ -1,19 +1,25 @@
 <div class="body" [ngClass]="sizeClass">
   <router-outlet />
   <div class="grid-container">
-  <div class="movie-card">
-    
-    <h3>Name</h3>
+    @for(item of items; track item){
+    <div class="movie-card">
+      <div class="d-flex align-items-center justify-content-center">
+        <img [src]="item.imagePreview" alt="Poster" style="width: 150px; height: auto;">
+      </div>
+      <div class="d-flex align-items-center justify-content-center">
+        <h3>{{item.name}}</h3>
+      </div>
 
-    <p><strong>Review:</strong></p>
+      <p><strong>Genre:</strong>{{item.genre}}</p>
 
-    <p><strong>Rating:</strong></p>
+      <p><strong>Rating:</strong>{{item.rating}}</p>
 
-    <p class="synopsis"></p>
+      <p><strong>Synopsis:</strong>{{item.synopsis}}</p>
+
+    </div>
+    }
+
 
   </div>
-  
-  
-</div>
 
 </div>

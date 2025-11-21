@@ -10,10 +10,10 @@ import { UserPanelService } from '../../services/user-panel-service/user-panel-s
 })
 export class HeaderBar {
 
-  constructor(private router: Router, private panelService:UserPanelService) {}
- 
-showPanel(){
- this.panelService.openPanel();
-}
+  constructor(private router: Router, private panelService: UserPanelService) { }
+
+  showPanel() {
+    this.panelService.openPanel();
+  }
 
 }

@@ -5,20 +5,20 @@ import { Malayalam } from './IndianMovies/malayalam/malayalam';
 import { UserPanel } from './user-panel/user-panel';
 
 export const routes: Routes = [
-   
-     {
-        path:'tamil', component:Tamil
-        
-    },
-     {
-        path:'telugu', component:Telugu
-        
-    },
-     {
-        path:'malayalam', component:Malayalam
-        
+
+    {
+        path: 'tamil', component: Tamil
+
     },
     {
-        path:'user-panel', component:UserPanel
+        path: 'telugu', component: Telugu
+
+    },
+    {
+        path: 'malayalam', component: Malayalam
+
+    },
+    {
+        path: 'user-panel', component: UserPanel
     }
 ];

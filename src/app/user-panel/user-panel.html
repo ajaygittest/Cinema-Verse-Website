@@ -4,25 +4,30 @@
 
 <div class="panel">
   <div class="panel-header">
-    <span>{{ panelTitle }}</span>
+    <span>Add Movie Details</span>
     <button class="close-btn" (click)="closePanel()">×</button>
   </div>
 
   <div class="panel-body">
 
     <form>
-      <label>Name</label>
-      <input type="text" placeholder="Enter name" />
+      <label>Title</label>
+      <input name="title" type="text" [(ngModel)]="formData.name" placeholder="Enter Title" />
 
-      <label>Email</label>
-      <input type="email" placeholder="Enter email" />
+      <label>Rating</label>
+      <input name="rating" type="text" [(ngModel)]="formData.rating" placeholder="Enter Rating" />
 
-      <label>Phone</label>
-      <input type="text" placeholder="Enter phone" />
+      <label>Genre</label>
+      <input name="genre" type="text" [(ngModel)]="formData.genre" placeholder="Enter Genre" />
 
-      <button class="save-btn">Save</button>
+      <label>Synopsis</label>
+      <input name="synopsis" type="text" [(ngModel)]="formData.synopsis" placeholder="Enter Synopsis" />
+
+      <label>Poster</label>
+      <input type="file" (change)="uploadImage($event)" />
+
+      <button class="save-btn" (click)="saveItem()">upload</button>
     </form>
 
   </div>
 </div>
-
