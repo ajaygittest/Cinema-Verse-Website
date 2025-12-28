@@ -10,10 +10,11 @@ import com.cineVerse.Entity.cineVerse;
 import com.cineVerse.repository.CineVerseRepo;
 
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/cine")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class CineVerseController {
 	
 	
