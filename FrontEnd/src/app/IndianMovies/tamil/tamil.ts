@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DialogService } from '../../../services/dialog-service';
+import { StorageService } from '../../../services/user-panel-service/storage-service';
 
 @Component({
   selector: 'cine-tamil',
@@ -8,7 +9,7 @@ import { DialogService } from '../../../services/dialog-service';
   styleUrl: './tamil.scss',
 })
 export class Tamil {
-  constructor(private dialogBoxService: DialogService) {}
+  constructor(private dialogBoxService: DialogService, private storageService: StorageService) {}
   openDialog() {
     this.dialogBoxService.open('Are you sure you want to proceed?').then((result) => {
       if (result) {
