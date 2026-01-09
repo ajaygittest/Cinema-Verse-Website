@@ -7,7 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.cineVerse.controller", "com.cineVerse.service", "com.cineVerse.core"})
+@ComponentScan(basePackages = {"com.cineVerse.controller", "com.cineVerse.service","com.cineVerse.configuration", "com.cineVerse.core"})
 @EntityScan(basePackages = "com.cineVerse.Entity")
 @EnableJpaRepositories(basePackages = "com.cineVerse.repository")
 public class CineVerseApplication {
