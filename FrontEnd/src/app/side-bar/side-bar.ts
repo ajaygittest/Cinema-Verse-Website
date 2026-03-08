@@ -1,4 +1,4 @@
-import { Component, EventEmitter, input, OnInit, Output, output } from '@angular/core';
+import { Component, EventEmitter, Input, input, OnInit, Output, output } from '@angular/core';
 import { Main } from '../main/main';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -15,32 +15,19 @@ export class SideBar implements OnInit {
   }
   @Output() typeSelected = new EventEmitter<string>();
 
-  select(type: string) {
+@Input() isSideBarCollapse!: boolean;
+  @Output() changeIsSideBarCollapse = new EventEmitter<boolean>();
+ items = [
+  { routeLink: '/list/tamil', icon: 'bi bi-motherboard', label: 'Tamil' },
+  { routeLink: '/list/telugu', icon: 'bi bi-motherboard', label: 'Telugu' },
+  { routeLink: '/list/malayalam', icon: 'bi bi-motherboard', label: 'Malayalam' }
+];
+ select(type: string) {
     this.typeSelected.emit(type);
   }
 
-  isSideBarCollapse = input.required<boolean>();
-  changeIsSideBarCollapse = output<boolean>();
-  items = [
-
-    {
-      routeLink: 'tamil',
-      icon: 'bi bi-motherboard',
-      label: 'Tamil',
-    },
-    {
-      routeLink: 'telugu',
-      icon: 'bi bi-motherboard',
-      label: 'Telugu',
-    }, {
-      routeLink: 'malayalam',
-      icon: 'bi bi-motherboard',
-      label: 'Malayalam',
-    }
-  ];
-
   toggleCollapse(): void {
-    this.changeIsSideBarCollapse.emit(!this.isSideBarCollapse());
+    this.changeIsSideBarCollapse.emit(!this.isSideBarCollapse);
   }
 
   closeSideNav(): void {

@@ -1,16 +1,17 @@
 <div class="body" [ngClass]="sizeClass">
-  <router-outlet />
   <div class="grid-container">
-    @for(item of items; track item){
+    @for(item of filteredItems; track item){
     <div class="movie-card">
       <div class="d-flex align-items-center justify-content-center">
-        <img [src]="item.imagePreview" alt="Poster" style="width: 150px; height: auto;">
+        <img   [src]="'data:' + item.imageType + ';base64,' + item.image" alt="Poster" style="width: 150px; height: auto;">
       </div>
       <div class="d-flex align-items-center justify-content-center">
-        <h3>{{item.name}}</h3>
+        <h3>{{item.title}}</h3>
       </div>
 
       <p><strong>Genre:</strong>{{item.genre}}</p>
+
+        <p><strong>Language:</strong>{{item.language}}</p>
 
       <p><strong>Rating:</strong>{{item.rating}}</p>
 

@@ -1,10 +1,11 @@
 package com.cineVerse.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,9 +30,14 @@ public class CineVerseController {
 	}
 	
 	@PostMapping("/insert")
-	public void postMovies(@RequestBody cineVerse verse) {
-		System.out.println(verse);
-		
+	public void saveMovie(@ModelAttribute cineVerse verse) throws IOException {
+
+	    if (verse.getImageFile() != null) {
+	        verse.setImage(verse.getImageFile().getBytes());
+	        verse.setImageType(verse.getImageFile().getContentType());
+	    }
+
+	   repo.save(verse);
 	}
 
 }

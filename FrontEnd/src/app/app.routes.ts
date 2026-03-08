@@ -1,23 +1,15 @@
 import { Routes } from '@angular/router';
-import { Tamil } from './IndianMovies/tamil/tamil';
-import { Telugu } from './IndianMovies/telugu/telugu';
-import { Malayalam } from './IndianMovies/malayalam/malayalam';
 import { UserPanel } from './user-panel/user-panel';
+import { Main } from './main/main';
 
 export const routes: Routes = [
 
     {
-        path: 'tamil', component: Tamil
+        path: 'list/:language', component: Main
 
     },
-    {
-        path: 'telugu', component: Telugu
-
-    },
-    {
-        path: 'malayalam', component: Malayalam
-
-    },
+     { path: '', redirectTo: '/list/All', pathMatch: 'full' },
+       { path: '**', redirectTo: '/list/All' } ,
     {
         path: 'user-panel', component: UserPanel
     }

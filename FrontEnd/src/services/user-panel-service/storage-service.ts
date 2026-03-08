@@ -11,9 +11,11 @@ export class StorageService {
   items$ = this.itemsSubject.asObservable();
 
   constructor(private http: HttpClient) {}
-  private url = 'http://localhost:8080/cine/insert';
+  private url = 'http://localhost:8080/cine/';
 
   movieDetails: any = {};
+
+  item:any[]=[];
 
   addItem(item: any) {
     const current = this.itemsSubject.value;
@@ -23,15 +25,22 @@ export class StorageService {
     this.movieDetails.rating = this.itemsSubject.value[0].rating;
     this.movieDetails.synopsis = this.itemsSubject.value[0].synopsis;
     this.movieDetails.genre = this.itemsSubject.value[0].genre;
-    console.log(this.movieDetails);
-    this.http.post(this.url, this.movieDetails).subscribe({
+      const formData = new FormData();
+
+  formData.append("title", this.itemsSubject.value[0].name);
+  formData.append("genre", this.itemsSubject.value[0].genre);
+  formData.append("rating", this.itemsSubject.value[0].rating);
+  formData.append("synopsis", this.itemsSubject.value[0].synopsis);
+  formData.append("imageFile", this.itemsSubject.value[0].imageFile);
+    console.log(formData);
+    this.http.post(this.url+"insert", formData).subscribe({
       next: (res) => {
         console.log(res);
       },
     });
   }
 
-  getItems() {
-    return this.itemsSubject.value;
-  }
+getItems() {
+  return this.http.get<any[]>(this.url + "movies");
+}
 }
