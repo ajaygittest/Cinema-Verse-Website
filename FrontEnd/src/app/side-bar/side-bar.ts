@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, input, OnInit, Output, output } from '@
 import { Main } from '../main/main';
 import { RouterLink, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { FilterService } from '../../services/filter-service';
 
 @Component({
   selector: 'cine-side-bar',
@@ -22,8 +23,16 @@ export class SideBar implements OnInit {
   { routeLink: '/list/telugu', icon: 'bi bi-motherboard', label: 'Telugu' },
   { routeLink: '/list/malayalam', icon: 'bi bi-motherboard', label: 'Malayalam' }
 ];
+
+constructor(private filterService: FilterService){
+  
+}
  select(type: string) {
     this.typeSelected.emit(type);
+  }
+
+    selectLanguage(language: string) {
+    this.filterService.setLanguage(language); // update the shared service
   }
 
   toggleCollapse(): void {

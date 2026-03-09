@@ -1,9 +1,10 @@
 <div class="body">
   <div class="header-content">
-    <label>Thriller</label>
-    <label>Romantic</label>
-    <label>Horror</label>
-    <label>Comedy</label>
+    @for(genre of genres; track genre){
+      <label (click)="selectGenre(genre)">
+    {{ genre }}
+  </label>
+}
     <div>
       <a (click)="showPanel()">
         <i class="bi bi-plus-square"></i>

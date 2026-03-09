@@ -64,6 +64,7 @@
   align-items: center;
   height: calc(100% - 3.65rem);
   cursor: pointer;
+  color:white;
 }
 
 .sidenav-nav .sidenav-nav-item {
@@ -110,4 +111,8 @@
 .close-icon {
   color: #fff;
   background-color: #fff;
+}
+
+.sidebar-icon{
+     margin: 10px;
 }

@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { SideBar } from './side-bar/side-bar';
 import { Main } from './main/main';
 import { HeaderBar } from './header-bar/header-bar';
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [SideBar, UserPanel, Main, HeaderBar, DialogBox, CommonModule],
+  imports: [SideBar, UserPanel, Main, HeaderBar, DialogBox, CommonModule,RouterOutlet,RouterModule],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
